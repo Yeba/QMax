@@ -102,6 +102,6 @@ class QubeT2:
 
     def Query(Q) -> Point:
         i, j = np.unravel_index(np.argmax(Q.w, axis=None), Q.w.shape)
-        return Point((j + Q.ja + 0.5) * Q.e, (i + Q.ia + 0.5) * Q.e, -1, Q.w[i, j])
+        return Point((j + 0.5) * Q.e+Q.xa, (i + 0.5) * Q.e+Q.ya, -1, Q.w[i, j])
     
     def memory(Q):return sys.getsizeof(Q.w)
